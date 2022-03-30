@@ -20,4 +20,12 @@ Remember to import the custom element class if defined in a different file. use 
 
 ## Customized Built-in Elements
 Follow the steps to create a customized built-in element:
-1. Step 1
+1. Define a class for the custom element e.g. ExpandingList, but this time extend from the respective HTML element interface i.e. `HTMLUListElement`.
+
+2. Define the functionality of the custom element in constructor as before.
+
+3. Register the element using `customElements.define()` with `extends` option e.g.  
+`customElements.define('expanding-list', ExpandingList, { extends: "ul" });`
+
+4. In HTML, use the custom element inside `is` attribute of the parent element. e.g.  
+`<ul is="expanding-list"> ... </ul>`
