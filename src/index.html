@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pop-up info widget - web components</h1>
+    <form>
+      <div>
+        <label for="cvc">Enter your CVC <popup-info img="img/icon-info.png" data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card."></popup-info></label>
+        <input type="text" id="cvc">
+      </div>
+    </form>
+
+    <h1>Expanding list custom element - web components</h1>
+    <ul is="expanding-list">
+        <li>UK
+            <ul>
+                <li>Yorkshire
+                    <ul>
+                        <li>Leeds
+                            <ul>
+                                <li>Train station</li>
+                                <li>Town hall</li>
+                                <li>Headrow</li>
+                            </ul>
+                        </li>
+                        <li>Bradford</li>
+                        <li>Hull</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>USA
+            <ul>
+                <li>California
+                    <ul>
+                        <li>Los Angeles</li>
+                        <li>San Francisco</li>
+                        <li>Berkeley</li>
+                    </ul>
+                </li>
+                <li>Nevada</li>
+                <li>Oregon</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <h2>Normal unorderd list using &lt;ul&gt;</h2>
+    <ul>
+        <li>Not</li>
+        <li>an</li>
+        <li>expanding</li>
+        <li>list</li>
+    </ul>
+
+
+    <!-- Load script -->
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
