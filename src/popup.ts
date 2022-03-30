@@ -1,4 +1,8 @@
 export class PopUpInfo extends HTMLElement {
+    
+    static get observedAttributes() {
+        return ['x', 'y'];
+    }
 
     constructor() {
         // Always call super first to maintain correct prototype chain        
@@ -74,4 +78,21 @@ export class PopUpInfo extends HTMLElement {
         wrapper.appendChild(icon);
         wrapper.appendChild(info);
     }
+
+    connectedCallback() {
+        console.log(`connectedCallback args`, arguments);
+    }
+
+    disconnectedCallback() {
+        console.log(`disconnectedCallback args`, arguments);
+    }
+
+    adoptedCallback() {
+        console.log(`adoptedCallback args`, arguments);
+    }
+
+    attributeChangedCallback() { 
+        console.log(`attributeChangedCallback args`, arguments);
+    }
+
 }

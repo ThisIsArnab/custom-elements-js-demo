@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Pop-up info widget - web components</h1>
+    <button onclick="addPopupAttr()">Add Attribute</button>
+    <button onclick="removePopupAttr()">Remove Attribute</button>
+    <button onclick="removeCustomEl()">Remove custom element</button>
     <form>
-      <div>
-        <label for="cvc">Enter your CVC <popup-info img="img/icon-info.png" data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card."></popup-info></label>
-        <input type="text" id="cvc">
-      </div>
+        <div>
+            <label for="cvc">Enter your CVC <popup-info img="img/icon-info.png"
+                    data-text="Your card validation code (CVC) is an extra security feature — it is the last 3 or 4 numbers on the back of your card.">
+                </popup-info></label>
+            <input type="text" id="cvc">
+        </div>
     </form>
 
     <h1>Expanding list custom element - web components</h1>
@@ -48,7 +55,7 @@
             </ul>
         </li>
     </ul>
-    
+
     <h2>Normal unorderd list using &lt;ul&gt;</h2>
     <ul>
         <li>Not</li>
@@ -60,5 +67,20 @@
 
     <!-- Load script -->
     <script type="module" src="./index.js"></script>
+    <script>
+        function addPopupAttr() {
+            document.querySelector('popup-info').setAttribute('x', 'value');
+        }
+
+        function removePopupAttr() {
+            document.querySelector('popup-info').removeAttribute('x');
+        }
+
+        function removeCustomEl() {
+            document.querySelector('popup-info').remove();
+        }
+
+    </script>
 </body>
+
 </html>
